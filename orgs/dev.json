@@ -1,6 +1,6 @@
 {
   "orgName": "loyalty-program-setup - Dev Org",
-  "edition": "Developer",
+  "template": "0TT3y000000L8tR",
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
