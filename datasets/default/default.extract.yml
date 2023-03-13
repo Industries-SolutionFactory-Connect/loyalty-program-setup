@@ -1,0 +1,409 @@
+extract:
+  Benefit:
+    fields:
+    - IsActive
+    - BenefitActionId
+    - Name
+    - BenefitTypeId
+    - Description
+    - PrioritySequence
+    - UnitId
+    - Value
+  BenefitAction:
+    fields:
+    - Description
+    - DeveloperName
+    - FlowDefinition
+    - FlowInstance
+    - IsActive
+    - IsBenefitExpirationAllowed
+    - IsBenefitUpdateAllowed
+    - Language
+    - MasterLabel
+    - MemberBenefitVariableName
+    - ProcessType
+    - Type
+  BenefitType:
+    fields:
+    - Category
+    - Description
+    - Name
+    - ProcessType
+    - LoyaltyProgramId
+  UnitOfMeasure:
+    fields:
+    - Name
+    - Type
+    - UnitCode
+  LoyaltyProgram:
+    fields:
+    - Description
+    - EscrowPeriod
+    - IsPrimary
+    - Name
+    - Status
+  Contact:
+    fields:
+    - AccountId
+    - AssistantName
+    - AssistantPhone
+    - Birthdate
+    - Fax
+    - Phone
+    - Description
+    - Jigsaw
+    - Department
+    - DoNotCall
+    - Email
+    - EmailBouncedDate
+    - EmailBouncedReason
+    - HasOptedOutOfEmail
+    - HasOptedOutOfFax
+    - FirstName
+    - HomePhone
+    - IndividualId
+    - LastName
+    - LeadSource
+    - MailingCity
+    - MailingCountry
+    - MailingGeocodeAccuracy
+    - MailingLatitude
+    - MailingLongitude
+    - MailingState
+    - MailingStreet
+    - MailingPostalCode
+    - MobilePhone
+    - OtherCity
+    - OtherCountry
+    - OtherGeocodeAccuracy
+    - OtherLatitude
+    - OtherLongitude
+    - OtherPhone
+    - OtherState
+    - OtherStreet
+    - OtherPostalCode
+    - ReportsToId
+    - Salutation
+    - Title
+  Account:
+    fields:
+    - AccountNumber
+    - AccountSource
+    - AnnualRevenue
+    - BillingCity
+    - BillingCountry
+    - BillingGeocodeAccuracy
+    - BillingLatitude
+    - BillingLongitude
+    - BillingPostalCode
+    - BillingState
+    - BillingStreet
+    - Description
+    - Fax
+    - Industry
+    - Jigsaw
+    - Name
+    - NumberOfEmployees
+    - Ownership
+    - Phone
+    - Rating
+    - ShippingCity
+    - ShippingCountry
+    - ShippingGeocodeAccuracy
+    - ShippingLatitude
+    - ShippingLongitude
+    - ShippingPostalCode
+    - ShippingState
+    - ShippingStreet
+    - Sic
+    - SicDesc
+    - Site
+    - TickerSymbol
+    - Type
+    - Website
+  Individual:
+    fields:
+    - LastName
+  JournalSubType:
+    fields:
+    - Description
+    - JournalTypeId
+    - Name
+  JournalType:
+    fields:
+    - Description
+    - Name
+    - ProcessType
+  LoyaltyLedger:
+    fields:
+    - ActivityDate
+    - AdditionalNotes
+    - Correlation
+    - LoyaltyProgramCurrencyId
+    - EscrowPointsCreditDate
+    - EventType
+    - ExpiryDate
+    - Flow
+    - LoyaltyProgramMemberId
+    - Points
+    - PromotionId
+    - TransactionJournalId
+  LoyaltyProgramCurrency:
+    fields:
+    - CostperUnit
+    - CurrencyType
+    - ExpiryModel
+    - ExpiryPeriodFrequency
+    - ExpiryPeriodUnit
+    - ExtendExpiration
+    - HasEscrow
+    - IsActive
+    - IsPrimary
+    - Name
+    - LoyaltyProgramId
+    - LoyaltyTierGroupId
+  LoyaltyProgramMember:
+    fields:
+    - CanReceivePartnerPromotions
+    - CanReceivePromotions
+    - EnrollmentChannel
+    - EnrollmentDate
+    - GroupName
+    - LastActivityDate
+    - MemberStatus
+    - MemberType
+    - MembershipEndDate
+    - MembershipLastRenewalDate
+    - MembershipNumber
+    - StatementFrequency
+    - StatementLastGeneratedDate
+    - StatementMethod
+    - AccountId
+    - RelatedCorporateMembershipId
+    - ContactId
+    - ProgramId
+    - GroupCreatedByMemberId
+    - ReferredById
+  Promotion:
+    fields:
+    - CumulativeUsageTarget
+    - CurrentLiabilityAmount
+    - CurrentPointCount
+    - Description
+    - EndDate
+    - EnrollmentEndDate
+    - EnrollmentStartDate
+    - FulfillmentAction
+    - IsActive
+    - IsEnrollmentRequired
+    - IsPointsWithFactor
+    - IssuedVoucherCount
+    - LoyaltyPromotionType
+    - MaximumLiabilityAmount
+    - MaximumRewardValue
+    - MaximumVoucherCount
+    - Name
+    - Objective
+    - PointFactor
+    - StartDate
+    - Status
+    - TotalRewardPoints
+    - TransactionJournalType
+    - DefaultVoucherDefinitionId
+    - LoyaltyProgramCurrencyId
+    - LoyaltyProgramId
+  TransactionJournal:
+    fields:
+    - ActivityDate
+    - BookedFareClass
+    - BookedRoomType
+    - BookingDate
+    - Brand
+    - Channel
+    - Destination
+    - Distance
+    - EndDate
+    - ErrorDescription
+    - EscrowPointsCreditDate
+    - Establishment
+    - ExternalTransactionNumber
+    - FlightNumber
+    - Industry
+    - InvoiceDate
+    - JournalDate
+    - JournalReason
+    - Origin
+    - PaymentMethod
+    - Quantity
+    - StartDate
+    - Status
+    - TransactionAmount
+    - TransactionLocation
+    - TraveledFareClass
+    - UsageType
+    - VoucherCode
+    - ProductCategoryId
+    - OrderItemId
+    - ProductId
+    - LoyaltyProgramId
+    - PartnerId
+    - JournalSubTypeId
+    - JournalTypeId
+    - OrderId
+    - MemberId
+    - PromotionId
+    - QuantityUnitOfMeasureId
+    - ReferredMemberId
+    - RelatedCorporateMembershipId
+    - RelatedJournalId
+  LoyaltyMemberCurrency:
+    fields:
+    - BalanceBeforeReset
+    - LoyaltyProgramCurrencyId
+    - LastAccrualProcessedDate
+    - LastEscrowProcessedDate
+    - LastExpirationProcessRunDate
+    - LastPointsAggregationDate
+    - LastResetDate
+    - LoyaltyMemberId
+    - Name
+    - NextResetDate
+    - PointsBalBeforeSecondLastReset
+    - TotalEscrowPointsAccrued
+    - TotalEscrowRolloverPoints
+    - ExpirablePoints
+    - TotalPointsAccrued
+    - TotalPointsExpired
+    - TotalPointsRedeemed
+  LoyaltyMemberTier:
+    fields:
+    - AreBenefitsAssigned
+    - ChangeReasonType
+    - EffectiveDate
+    - LoyaltyMemberId
+    - LoyaltyTierGroupId
+    - LoyaltyTierId
+    - Name
+    - ReasonForChange
+    - TierExpirationDate
+  LoyaltyTierGroup:
+    fields:
+    - Description
+    - ExtendExpiration
+    - IsActive
+    - IsHiddenToMembers
+    - IsPrimary
+    - Name
+    - QpResetDate
+    - QpResetFrequency
+    - QpResetPeriod
+    - TierModel
+    - TierPeriodQuantity
+    - TierPeriodUnit
+    - LoyaltyProgramId
+  LoyaltyTier:
+    fields:
+    - Description
+    - Name
+    - SequenceNumber
+    - LoyaltyTierGroupId
+  LoyaltyPgmEngmtAttribute:
+    fields:
+    - DefaultValue
+    - Description
+    - EndDate
+    - LoyaltyProgramId
+    - MaximumResetCountPerPeriod
+    - Name
+    - ShouldOverwriteAttrCurrVal
+    - ResetValueOn
+    - StartDate
+    - Status
+    - TargetValue
+    - ValueResetFrequency
+  LoyaltyPgmEngmtAttrProm:
+    fields:
+    - LoyaltyProgramEngmtAttrId
+    - PromotionId
+  LoyaltyProgramProcess:
+    fields:
+    - Description
+    - JournalSubTypeId
+    - JournalTypeId
+    - LoyaltyProgramId
+    - Name
+    - ExecutionType
+    - ProcessType
+    - Status
+  LoyaltyProgramSetup:
+    fields:
+    - MasterLabel
+    - Language
+    - DeveloperName
+  LoyaltyTierBenefit:
+    fields:
+    - BenefitId
+    - LoyaltyTierId
+    - Name
+  ProductCategory:
+    fields:
+    - CatalogId
+    - ParentCategoryId
+    - Description
+    - Name
+    - IsNavigational
+    - SortOrder
+  ProductCatalog:
+    fields:
+    - Name
+  OrderItem:
+    fields:
+    - Quantity
+  VoucherDefinition:
+    fields:
+    - ProductId
+    - CostPerVoucher
+    - Description
+    - DiscountPercent
+    - EffectiveDate
+    - ExpirationDate
+    - ExpirationPeriod
+    - ExpirationPeriodUnit
+    - ExpirationType
+    - FaceValue
+    - IsActive
+    - IsPartialRedeemable
+    - Name
+    - Type
+    - PartnerAccountId
+    - LoyaltyProgramId
+  Voucher:
+    fields:
+    - BenefitId
+    - ContactId
+    - DiscountPercent
+    - EffectiveDate
+    - ExpirationDate
+    - FaceValue
+    - LoyaltyProgramMemberId
+    - PromotionId
+    - Reason
+    - RedeemedValue
+    - Status
+    - TransactionJournalId
+    - UseDate
+    - VoucherCode
+    - VoucherDefinitionId
+  LoyaltyProgramPartner:
+    fields:
+    - Name
+    - PartnerIndustry
+    - PartnerType
+    - PartnershipStartDate
+  Order:
+    fields:
+    - EffectiveDate
+    - Status
+  Product2:
+    fields:
+    - Name

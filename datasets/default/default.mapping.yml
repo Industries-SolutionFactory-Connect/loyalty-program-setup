@@ -1,0 +1,651 @@
+Insert BenefitAction:
+  sf_object: BenefitAction
+  table: BenefitAction
+  fields:
+  - Description
+  - DeveloperName
+  - FlowDefinition
+  - FlowInstance
+  - IsActive
+  - IsBenefitExpirationAllowed
+  - IsBenefitUpdateAllowed
+  - Language
+  - MasterLabel
+  - MemberBenefitVariableName
+  - ProcessType
+  - Type
+Insert UnitOfMeasure:
+  sf_object: UnitOfMeasure
+  table: UnitOfMeasure
+  fields:
+  - Name
+  - Type
+  - UnitCode
+Insert LoyaltyProgram:
+  sf_object: LoyaltyProgram
+  table: LoyaltyProgram
+  fields:
+  - Description
+  - EscrowPeriod
+  - IsPrimary
+  - Name
+  - Status
+Insert Account:
+  sf_object: Account
+  table: Account
+  fields:
+  - AccountNumber
+  - AccountSource
+  - AnnualRevenue
+  - BillingCity
+  - BillingCountry
+  - BillingGeocodeAccuracy
+  - BillingLatitude
+  - BillingLongitude
+  - BillingPostalCode
+  - BillingState
+  - BillingStreet
+  - Description
+  - Fax
+  - Industry
+  - Jigsaw
+  - Name
+  - NumberOfEmployees
+  - Ownership
+  - Phone
+  - Rating
+  - ShippingCity
+  - ShippingCountry
+  - ShippingGeocodeAccuracy
+  - ShippingLatitude
+  - ShippingLongitude
+  - ShippingPostalCode
+  - ShippingState
+  - ShippingStreet
+  - Sic
+  - SicDesc
+  - Site
+  - TickerSymbol
+  - Type
+  - Website
+Insert Individual:
+  sf_object: Individual
+  table: Individual
+  fields:
+  - LastName
+Insert JournalType:
+  sf_object: JournalType
+  table: JournalType
+  fields:
+  - Description
+  - Name
+  - ProcessType
+Insert LoyaltyProgramSetup:
+  sf_object: LoyaltyProgramSetup
+  table: LoyaltyProgramSetup
+  fields:
+  - MasterLabel
+  - Language
+  - DeveloperName
+Insert ProductCatalog:
+  sf_object: ProductCatalog
+  table: ProductCatalog
+  fields:
+  - Name
+Insert Order:
+  sf_object: Order
+  table: Order
+  fields:
+  - EffectiveDate
+  - Status
+Insert Product2:
+  sf_object: Product2
+  table: Product2
+  fields:
+  - Name
+Insert Pricebook2:
+  sf_object: Pricebook2
+  table: Pricebook2
+  fields:
+  - Name
+Insert BenefitType:
+  sf_object: BenefitType
+  table: BenefitType
+  fields:
+  - Category
+  - Description
+  - Name
+  - ProcessType
+  lookups:
+    LoyaltyProgramId:
+      table: LoyaltyProgram
+      key_field: LoyaltyProgramId
+Insert Contact:
+  sf_object: Contact
+  table: Contact
+  fields:
+  - AssistantName
+  - AssistantPhone
+  - Birthdate
+  - Fax
+  - Phone
+  - Description
+  - Jigsaw
+  - Department
+  - DoNotCall
+  - Email
+  - EmailBouncedDate
+  - EmailBouncedReason
+  - HasOptedOutOfEmail
+  - HasOptedOutOfFax
+  - FirstName
+  - HomePhone
+  - LastName
+  - LeadSource
+  - MailingCity
+  - MailingCountry
+  - MailingGeocodeAccuracy
+  - MailingLatitude
+  - MailingLongitude
+  - MailingState
+  - MailingStreet
+  - MailingPostalCode
+  - MobilePhone
+  - OtherCity
+  - OtherCountry
+  - OtherGeocodeAccuracy
+  - OtherLatitude
+  - OtherLongitude
+  - OtherPhone
+  - OtherState
+  - OtherStreet
+  - OtherPostalCode
+  - Salutation
+  - Title
+  lookups:
+    AccountId:
+      table: Account
+      key_field: AccountId
+    IndividualId:
+      table: Individual
+      key_field: IndividualId
+    ReportsToId:
+      table: Contact
+      key_field: ReportsToId
+      after: Insert Contact
+Insert JournalSubType:
+  sf_object: JournalSubType
+  table: JournalSubType
+  fields:
+  - Description
+  - Name
+  lookups:
+    JournalTypeId:
+      table: JournalType
+      key_field: JournalTypeId
+Insert LoyaltyTierGroup:
+  sf_object: LoyaltyTierGroup
+  table: LoyaltyTierGroup
+  fields:
+  - Description
+  - ExtendExpiration
+  - IsActive
+  - IsHiddenToMembers
+  - IsPrimary
+  - Name
+  - QpResetDate
+  - QpResetFrequency
+  - QpResetPeriod
+  - TierModel
+  - TierPeriodQuantity
+  - TierPeriodUnit
+  lookups:
+    LoyaltyProgramId:
+      table: LoyaltyProgram
+      key_field: LoyaltyProgramId
+Insert LoyaltyPgmEngmtAttribute:
+  sf_object: LoyaltyPgmEngmtAttribute
+  table: LoyaltyPgmEngmtAttribute
+  fields:
+  - DefaultValue
+  - Description
+  - EndDate
+  - MaximumResetCountPerPeriod
+  - Name
+  - ShouldOverwriteAttrCurrVal
+  - ResetValueOn
+  - StartDate
+  - Status
+  - TargetValue
+  - ValueResetFrequency
+  lookups:
+    LoyaltyProgramId:
+      table: LoyaltyProgram
+      key_field: LoyaltyProgramId
+Insert ProductCategory:
+  sf_object: ProductCategory
+  table: ProductCategory
+  fields:
+  - Description
+  - Name
+  - IsNavigational
+  - SortOrder
+  lookups:
+    CatalogId:
+      table: ProductCatalog
+      key_field: CatalogId
+    ParentCategoryId:
+      table: ProductCategory
+      key_field: ParentCategoryId
+      after: Insert ProductCategory
+Insert VoucherDefinition:
+  sf_object: VoucherDefinition
+  table: VoucherDefinition
+  fields:
+  - CostPerVoucher
+  - Description
+  - DiscountPercent
+  - EffectiveDate
+  - ExpirationDate
+  - ExpirationPeriod
+  - ExpirationPeriodUnit
+  - ExpirationType
+  - FaceValue
+  - IsActive
+  - IsPartialRedeemable
+  - Name
+  - Type
+  lookups:
+    PartnerAccountId:
+      table: Account
+      key_field: PartnerAccountId
+    LoyaltyProgramId:
+      table: LoyaltyProgram
+      key_field: LoyaltyProgramId
+Insert LoyaltyProgramPartner:
+  sf_object: LoyaltyProgramPartner
+  table: LoyaltyProgramPartner
+  fields:
+  - Name
+  - PartnerIndustry
+  - PartnerType
+  - PartnershipStartDate
+  lookups:
+    LoyaltyPartnerId:
+      table: Account
+      key_field: LoyaltyPartnerId
+    LoyaltyProgramId:
+      table: LoyaltyProgram
+      key_field: LoyaltyProgramId
+Insert PricebookEntry:
+  sf_object: PricebookEntry
+  table: PricebookEntry
+  fields:
+  - UnitPrice
+  lookups:
+    Pricebook2Id:
+      table: Pricebook2
+      key_field: Pricebook2Id
+    Product2Id:
+      table: Product2
+      key_field: Product2Id
+Insert Benefit:
+  sf_object: Benefit
+  table: Benefit
+  fields:
+  - IsActive
+  - Name
+  - Description
+  - PrioritySequence
+  - Value
+  lookups:
+    BenefitActionId:
+      table: BenefitAction
+      key_field: BenefitActionId
+    BenefitTypeId:
+      table: BenefitType
+      key_field: BenefitTypeId
+    UnitId:
+      table: UnitOfMeasure
+      key_field: UnitId
+Insert LoyaltyProgramCurrency:
+  sf_object: LoyaltyProgramCurrency
+  table: LoyaltyProgramCurrency
+  fields:
+  - CostperUnit
+  - CurrencyType
+  - ExpiryModel
+  - ExpiryPeriodFrequency
+  - ExpiryPeriodUnit
+  - ExtendExpiration
+  - HasEscrow
+  - IsActive
+  - IsPrimary
+  - Name
+  lookups:
+    LoyaltyProgramId:
+      table: LoyaltyProgram
+      key_field: LoyaltyProgramId
+    LoyaltyTierGroupId:
+      table: LoyaltyTierGroup
+      key_field: LoyaltyTierGroupId
+Insert LoyaltyProgramMember:
+  sf_object: LoyaltyProgramMember
+  table: LoyaltyProgramMember
+  fields:
+  - CanReceivePartnerPromotions
+  - CanReceivePromotions
+  - EnrollmentChannel
+  - EnrollmentDate
+  - GroupName
+  - LastActivityDate
+  - MemberStatus
+  - MemberType
+  - MembershipEndDate
+  - MembershipLastRenewalDate
+  - MembershipNumber
+  - StatementFrequency
+  - StatementLastGeneratedDate
+  - StatementMethod
+  lookups:
+    AccountId:
+      table: Account
+      key_field: AccountId
+    RelatedCorporateMembershipId:
+      table: LoyaltyProgramMember
+      key_field: RelatedCorporateMembershipId
+      after: Insert LoyaltyProgramMember
+    ContactId:
+      table: Contact
+      key_field: ContactId
+    ProgramId:
+      table: LoyaltyProgram
+      key_field: ProgramId
+    GroupCreatedByMemberId:
+      table: LoyaltyProgramMember
+      key_field: GroupCreatedByMemberId
+      after: Insert LoyaltyProgramMember
+    ReferredById:
+      table: LoyaltyProgramMember
+      key_field: ReferredById
+      after: Insert LoyaltyProgramMember
+Insert LoyaltyTier:
+  sf_object: LoyaltyTier
+  table: LoyaltyTier
+  fields:
+  - Description
+  - Name
+  - SequenceNumber
+  lookups:
+    LoyaltyTierGroupId:
+      table: LoyaltyTierGroup
+      key_field: LoyaltyTierGroupId
+Insert LoyaltyProgramProcess:
+  sf_object: LoyaltyProgramProcess
+  table: LoyaltyProgramProcess
+  fields:
+  - Description
+  - Name
+  - ExecutionType
+  - ProcessType
+  - Status
+  lookups:
+    JournalSubTypeId:
+      table: JournalSubType
+      key_field: JournalSubTypeId
+    JournalTypeId:
+      table: JournalType
+      key_field: JournalTypeId
+    LoyaltyProgramId:
+      table: LoyaltyProgram
+      key_field: LoyaltyProgramId
+Insert OrderItem:
+  sf_object: OrderItem
+  table: OrderItem
+  fields:
+  - Quantity
+  lookups:
+    OrderId:
+      table: Order
+      key_field: OrderId
+    PricebookEntryId:
+      table: PricebookEntry
+      key_field: PricebookEntryId
+Insert Promotion:
+  sf_object: Promotion
+  table: Promotion
+  fields:
+  - CumulativeUsageTarget
+  - CurrentLiabilityAmount
+  - CurrentPointCount
+  - Description
+  - EndDate
+  - EnrollmentEndDate
+  - EnrollmentStartDate
+  - FulfillmentAction
+  - IsActive
+  - IsEnrollmentRequired
+  - IsPointsWithFactor
+  - IssuedVoucherCount
+  - LoyaltyPromotionType
+  - MaximumLiabilityAmount
+  - MaximumRewardValue
+  - MaximumVoucherCount
+  - Name
+  - Objective
+  - PointFactor
+  - StartDate
+  - Status
+  - TotalRewardPoints
+  - TransactionJournalType
+  lookups:
+    DefaultVoucherDefinitionId:
+      table: VoucherDefinition
+      key_field: DefaultVoucherDefinitionId
+    LoyaltyProgramCurrencyId:
+      table: LoyaltyProgramCurrency
+      key_field: LoyaltyProgramCurrencyId
+    LoyaltyProgramId:
+      table: LoyaltyProgram
+      key_field: LoyaltyProgramId
+Insert LoyaltyMemberCurrency:
+  sf_object: LoyaltyMemberCurrency
+  table: LoyaltyMemberCurrency
+  fields:
+  - BalanceBeforeReset
+  - LastAccrualProcessedDate
+  - LastEscrowProcessedDate
+  - LastExpirationProcessRunDate
+  - LastPointsAggregationDate
+  - LastResetDate
+  - Name
+  - NextResetDate
+  - PointsBalBeforeSecondLastReset
+  - TotalEscrowPointsAccrued
+  - TotalEscrowRolloverPoints
+  - ExpirablePoints
+  - TotalPointsAccrued
+  - TotalPointsExpired
+  - TotalPointsRedeemed
+  lookups:
+    LoyaltyProgramCurrencyId:
+      table: LoyaltyProgramCurrency
+      key_field: LoyaltyProgramCurrencyId
+    LoyaltyMemberId:
+      table: LoyaltyProgramMember
+      key_field: LoyaltyMemberId
+Insert LoyaltyMemberTier:
+  sf_object: LoyaltyMemberTier
+  table: LoyaltyMemberTier
+  fields:
+  - AreBenefitsAssigned
+  - ChangeReasonType
+  - EffectiveDate
+  - Name
+  - ReasonForChange
+  - TierExpirationDate
+  lookups:
+    LoyaltyMemberId:
+      table: LoyaltyProgramMember
+      key_field: LoyaltyMemberId
+    LoyaltyTierGroupId:
+      table: LoyaltyTierGroup
+      key_field: LoyaltyTierGroupId
+    LoyaltyTierId:
+      table: LoyaltyTier
+      key_field: LoyaltyTierId
+Insert LoyaltyTierBenefit:
+  sf_object: LoyaltyTierBenefit
+  table: LoyaltyTierBenefit
+  fields:
+  - Name
+  lookups:
+    BenefitId:
+      table: Benefit
+      key_field: BenefitId
+    LoyaltyTierId:
+      table: LoyaltyTier
+      key_field: LoyaltyTierId
+Insert TransactionJournal:
+  sf_object: TransactionJournal
+  table: TransactionJournal
+  fields:
+  - ActivityDate
+  - BookedFareClass
+  - BookedRoomType
+  - BookingDate
+  - Brand
+  - Channel
+  - Destination
+  - Distance
+  - EndDate
+  - ErrorDescription
+  - EscrowPointsCreditDate
+  - Establishment
+  - ExternalTransactionNumber
+  - FlightNumber
+  - Industry
+  - InvoiceDate
+  - JournalDate
+  - JournalReason
+  - Origin
+  - PaymentMethod
+  - Quantity
+  - StartDate
+  - Status
+  - TransactionAmount
+  - TransactionLocation
+  - TraveledFareClass
+  - UsageType
+  - VoucherCode
+  lookups:
+    ProductCategoryId:
+      table: ProductCategory
+      key_field: ProductCategoryId
+    OrderItemId:
+      table: OrderItem
+      key_field: OrderItemId
+    ProductId:
+      table: Product2
+      key_field: ProductId
+    LoyaltyProgramId:
+      table: LoyaltyProgram
+      key_field: LoyaltyProgramId
+    PartnerId:
+      table: LoyaltyProgramPartner
+      key_field: PartnerId
+    JournalSubTypeId:
+      table: JournalSubType
+      key_field: JournalSubTypeId
+    JournalTypeId:
+      table: JournalType
+      key_field: JournalTypeId
+    OrderId:
+      table: Order
+      key_field: OrderId
+    MemberId:
+      table: LoyaltyProgramMember
+      key_field: MemberId
+    PromotionId:
+      table: Promotion
+      key_field: PromotionId
+    QuantityUnitOfMeasureId:
+      table: UnitOfMeasure
+      key_field: QuantityUnitOfMeasureId
+    ReferredMemberId:
+      table: LoyaltyProgramMember
+      key_field: ReferredMemberId
+    RelatedCorporateMembershipId:
+      table: LoyaltyProgramMember
+      key_field: RelatedCorporateMembershipId
+    RelatedJournalId:
+      table: TransactionJournal
+      key_field: RelatedJournalId
+      after: Insert TransactionJournal
+Insert LoyaltyPgmEngmtAttrProm:
+  sf_object: LoyaltyPgmEngmtAttrProm
+  table: LoyaltyPgmEngmtAttrProm
+  lookups:
+    LoyaltyProgramEngmtAttrId:
+      table: LoyaltyPgmEngmtAttribute
+      key_field: LoyaltyProgramEngmtAttrId
+    PromotionId:
+      table: Promotion
+      key_field: PromotionId
+Insert LoyaltyLedger:
+  sf_object: LoyaltyLedger
+  table: LoyaltyLedger
+  fields:
+  - ActivityDate
+  - AdditionalNotes
+  - Correlation
+  - EscrowPointsCreditDate
+  - EventType
+  - ExpiryDate
+  - Flow
+  - Points
+  lookups:
+    LoyaltyProgramCurrencyId:
+      table: LoyaltyProgramCurrency
+      key_field: LoyaltyProgramCurrencyId
+    LoyaltyProgramMemberId:
+      table: LoyaltyProgramMember
+      key_field: LoyaltyProgramMemberId
+    PromotionId:
+      table: Promotion
+      key_field: PromotionId
+    TransactionJournalId:
+      table: TransactionJournal
+      key_field: TransactionJournalId
+Insert Voucher:
+  sf_object: Voucher
+  table: Voucher
+  fields:
+  - DiscountPercent
+  - EffectiveDate
+  - ExpirationDate
+  - FaceValue
+  - Reason
+  - RedeemedValue
+  - Status
+  - UseDate
+  - VoucherCode
+  lookups:
+    BenefitId:
+      table: Benefit
+      key_field: BenefitId
+    ContactId:
+      table: Contact
+      key_field: ContactId
+    LoyaltyProgramMemberId:
+      table: LoyaltyProgramMember
+      key_field: LoyaltyProgramMemberId
+    PromotionId:
+      table: Promotion
+      key_field: PromotionId
+    TransactionJournalId:
+      table: TransactionJournal
+      key_field: TransactionJournalId
+    VoucherDefinitionId:
+      table: VoucherDefinition
+      key_field: VoucherDefinitionId
